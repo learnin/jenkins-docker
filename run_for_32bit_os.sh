@@ -7,6 +7,7 @@ docker volume create --name jenkinsdocker_master-data
 docker run \
   -d \
   -e 'JAVA_OPTS=-Djava.awt.headless=true' \
+  -e 'TZ=Asia/Tokyo' \
   --name jenkinsdocker_master_1 \
   -p 8080:8080 \
   -p 50000:50000 \

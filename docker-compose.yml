@@ -2,12 +2,13 @@ version: '2'
 services:
   master:
     build:
+      args:
+        - http_proxy=${http_proxy}
+        - https_proxy=${https_proxy}
       context: .
-        args:
-          - http_proxy=${http_proxy}
-          - https_proxy=${https_proxy}
     environment:
-      JAVA_OPTS: "-Djava.awt.headless=true"
+      - JAVA_OPTS="-Djava.awt.headless=true"
+      - TZ=Asia/Tokyo
     ports:
       - "50000:50000"
       - "8080:8080"
