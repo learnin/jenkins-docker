@@ -24,5 +24,6 @@ export no_proxy=`docker-machine ip default`
 export NO_PROXY=$no_proxy
 
 ./build_for_32bit_os.sh
+docker-machine ssh default
 ./run_for_32bit_os.sh
 ```
