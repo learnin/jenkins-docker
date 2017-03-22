@@ -4,7 +4,7 @@
 docker volume create --name jenkinsdocker_master-data
 
 # master
-docker run \
+docker container run \
   -d \
   -e 'JAVA_OPTS=-Djava.awt.headless=true' \
   -e 'TZ=Asia/Tokyo' \
