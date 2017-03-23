@@ -24,6 +24,8 @@ export no_proxy=`docker-machine ip default`
 export NO_PROXY=$no_proxy
 
 ./build_for_32bit_os.sh
+docker-machine scp run_for_32bit_os.sh default:/tmp/jenkins_run_for_32bit_os.sh
 docker-machine ssh default
-./run_for_32bit_os.sh
+sh /tmp/jenkins_run_for_32bit_os.sh
+rm -f /tmp/jenkins_run_for_32bit_os.sh
 ```
