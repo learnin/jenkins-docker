@@ -1,6 +1,6 @@
 version: '2'
 services:
-  master:
+  app:
     build:
       args:
         - http_proxy=${http_proxy}
@@ -17,4 +17,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - master-data:/var/jenkins_home
 volumes:
-  master-data: {}
+  app-data: {}
