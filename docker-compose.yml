@@ -11,7 +11,7 @@ services:
       - TZ=Asia/Tokyo
     ports:
       - "50000:50000"
-      - "8080:8080"
+      - "50001:8080"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - master-data:/var/jenkins_home

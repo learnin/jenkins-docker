@@ -9,7 +9,7 @@ docker container run \
   -e 'JAVA_OPTS=-Djava.awt.headless=true' \
   -e 'TZ=Asia/Tokyo' \
   --name jenkinsdocker_master_1 \
-  -p 8080:8080 \
+  -p 50001:8080 \
   -p 50000:50000 \
   -v /etc/localtime:/etc/localtime:ro \
   -v jenkinsdocker_master-data:/var/jenkins_home \
