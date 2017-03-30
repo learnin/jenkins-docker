@@ -11,7 +11,7 @@ docker container run \
   --name jenkinsdocker_app_1 \
   -p 50001:8080 \
   -p 50000:50000 \
-  --restart always \
+  --restart unless-stopped \
   -v /etc/localtime:/etc/localtime:ro \
   -v jenkinsdocker_app-data:/var/jenkins_home \
   jenkinsdocker_app
