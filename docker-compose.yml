@@ -15,6 +15,6 @@ services:
     restart: unless-stopped
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - master-data:/var/jenkins_home
+      - app-data:/var/jenkins_home
 volumes:
   app-data: {}
