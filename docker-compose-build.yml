@@ -1,10 +1,14 @@
 version: '3'
 services:
   app:
+    build:
+      args:
+        - http_proxy=${http_proxy}
+        - https_proxy=${https_proxy}
+      context: .
     environment:
       - JAVA_OPTS="-Djava.awt.headless=true"
       - TZ=Asia/Tokyo
-    image: learnin/jenkins
     ports:
       - "50000:50000"
       - "50001:8080"

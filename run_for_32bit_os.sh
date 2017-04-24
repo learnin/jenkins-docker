@@ -14,4 +14,4 @@ docker container run \
   --restart unless-stopped \
   -v /etc/localtime:/etc/localtime:ro \
   -v jenkinsdocker_app-data:/var/jenkins_home \
-  jenkinsdocker_app
+  learnin/jenkins
