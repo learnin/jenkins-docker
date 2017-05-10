@@ -28,6 +28,24 @@ sh /tmp/jenkins_run_for_32bit_os.sh
 rm -f /tmp/jenkins_run_for_32bit_os.sh
 ```
 
+## How to backup
+```shell
+docker container run \
+  --rm \
+  -v jenkinsdocker_app-data:/target/jenkins-data \
+  -v $(pwd):/backup \
+  ubuntu tar cvzfp /backup/backup.tar.gz /target
+```
+
+## How to restore
+```shell
+docker container run \
+  --rm \
+  -v jenkinsdocker_app-data:/target/jenkins-data \
+  -v $(pwd):/backup \
+  ubuntu bash -c "cd /target && tar xvzfp /backup/backup.tar.gz --strip 1"
+```
+
 # For developers
 
 ## How to build and run
