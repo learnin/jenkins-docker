@@ -32,30 +32,30 @@ rm -f /tmp/jenkins_run_for_32bit_os.sh
 ```shell
 docker container run \
   --rm \
-  -v jenkinsdocker_app-data:/target/jenkins-data \
+  -v jenkinsdocker_app-data:/target/data \
   -v $(pwd):/backup \
-  ubuntu tar cvzfp /backup/backup.tar.gz /target
+  ubuntu tar cvzfp /backup/jenkins_backup.tar.gz /target
 ```
 
 If you use docker-machine, execute the above command in docker-machine, and copy backup.tar.gz from docker-machine to host machine with the following command.
 
 ```shell
-docker-machine scp default:~/backup.tar.gz .
+docker-machine scp default:~/jenkins_backup.tar.gz .
 ```
 
 ## How to restore
 ```shell
 docker container run \
   --rm \
-  -v jenkinsdocker_app-data:/target/jenkins-data \
+  -v jenkinsdocker_app-data:/target/data \
   -v $(pwd):/backup \
-  ubuntu bash -c "cd /target && tar xvzfp /backup/backup.tar.gz --strip 1"
+  ubuntu bash -c "cd /target && tar xvzfp /backup/jenkins_backup.tar.gz --strip 1"
 ```
 
 If you use docker-machine, execute the following command to copy backup.tar.gz from host machine to docker-machine, and execute the above command in docker-machine.
 
 ```shell
-docker-machine scp backup.tar.gz default:~/
+docker-machine scp jenkins_backup.tar.gz default:~/
 ```
 
 # For developers
