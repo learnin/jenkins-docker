@@ -16,7 +16,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
           registry: ghcr.io
-          repository: ${{ github.repository }}
+          repository: learnin/jenkins-docker/jenkins
           tag_with_ref: true
         env:
           DOCKER_BUILDKIT: 1
